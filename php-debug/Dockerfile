@@ -12,12 +12,13 @@ FROM php:${PHP_VERSION}-cli-alpine
 # persistent / runtime deps
 RUN apk add --no-cache \
 		acl \
-        curl \
+                curl \
 		fcgi \
 		file \
 		gettext \
 		git \
 		gnu-libiconv \
+		so:libpq.so.5 \
 	;
 
 # install gnu-libiconv and set LD_PRELOAD env to make iconv work fully on Alpine image.
